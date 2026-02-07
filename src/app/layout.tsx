@@ -37,7 +37,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative min-h-screen">
+          <div className="relative min-h-screen w-full overflow-x-hidden">
             <BackgroundEffect />
             <Navbar />
             {children}

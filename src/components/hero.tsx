@@ -44,10 +44,10 @@ export function Hero() {
           </motion.div>
 
           <div className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-neutral-900 dark:text-white leading-[1.1] whitespace-nowrap">
-              Hi, I’m <span className="text-blue-600 dark:text-blue-500 border-b-4 border-blue-600 dark:border-blue-500">Suman Kumar</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-neutral-900 dark:text-white leading-[1.1]">
+              Hi, I'm <span className="text-blue-600 dark:text-blue-500 border-b-4 border-blue-600 dark:border-blue-500 whitespace-nowrap">Suman Kumar</span>
             </h1>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold whitespace-nowrap">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold">
               <span className="text-neutral-500 dark:text-neutral-400">Full Stack</span> <span className="text-neutral-900 dark:text-white">Software Engineer</span>
             </h2>
           </div>
