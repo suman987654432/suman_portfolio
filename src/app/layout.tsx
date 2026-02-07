@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: "Suman Kumar | Full Stack Developer",
   description: "Portfolio of Suman Kumar, a Full Stack Developer specializing in React, Next.js, Node.js, and modern web technologies.",
   keywords: ["Full Stack Developer", "React", "Next.js", "Node.js", "Portfolio", "Web Development"],
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
