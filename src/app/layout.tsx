@@ -41,11 +41,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <BackgroundEffect />
-          <Navbar />
-          <main className="flex min-h-screen flex-col items-center justify-between">
-             {children}
-          </main>
+          <div className="relative min-h-screen">
+            <BackgroundEffect />
+            <Navbar />
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>
