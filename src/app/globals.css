@@ -24,6 +24,15 @@
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
     overflow-x: hidden;
+    font-size: 95%;
+    /* Adjust base font size slightly down */
+  }
+
+  @media (max-width: 640px) {
+    html {
+      font-size: 90%;
+      /* Even smaller on mobile */
+    }
   }
 
   body {
