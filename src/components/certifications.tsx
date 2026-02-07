@@ -62,7 +62,7 @@ const allCertifications: Certification[] = [
     color: "border-t-blue-500"
   },
   {
-    title: "Introduction to Web Development with HTML, CSS, JavaScript",
+    title: "Introduction to Web Development ",
     issuer: "Coursera",
     provider: "IBM",
     date: "Aug 5, 2024",
