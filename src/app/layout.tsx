@@ -18,6 +18,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://suman-portfolio-xi.vercel.app/"), // Replace with your actual domain
   title: "Suman Kumar | Full Stack Developer",
   description: "Portfolio of Suman Kumar, a Full Stack Developer specializing in React, Next.js, Node.js, and modern web technologies.",
   keywords: ["Full Stack Developer", "React", "Next.js", "Node.js", "Portfolio", "Web Development"],
