@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { BackgroundEffect } from "@/components/background-effect";
 import { Navbar } from "@/components/navbar";
 
+// Use only one font to reduce bundle size
 const inter = Inter({ 
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-  display: "swap",
+  weight: ["300", "400", "500", "600", "700"], // Only load needed weights
 });
 
 export const metadata: Metadata = {
@@ -34,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased text-neutral-900 dark:text-neutral-50 bg-neutral-50 dark:bg-neutral-950 transition-colors duration-300`}>
+      <body className={`${inter.variable} font-sans antialiased text-neutral-900 dark:text-neutral-50 bg-neutral-50 dark:bg-neutral-950 transition-colors duration-300`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
