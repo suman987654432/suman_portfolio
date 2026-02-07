@@ -1,6 +1,6 @@
 "use client"
 import { motion, AnimatePresence } from "framer-motion"
-import { Trophy, CheckCircle2, ExternalLink, Bookmark } from "lucide-react"
+import {  CheckCircle2, ExternalLink, Bookmark } from "lucide-react"
 import { useState } from "react"
 
 interface Certification {
