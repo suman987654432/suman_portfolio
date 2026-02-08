@@ -5,17 +5,43 @@ import { Send, Mail, MapPin, Linkedin, Github, Loader2 } from "lucide-react"
 
 export function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" })
-  const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle")
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setStatus("submitting")
-    // Mock submission
-    setTimeout(() => {
-      setStatus("success")
-      setForm({ name: "", email: "", message: "" })
-      setTimeout(() => setStatus("idle"), 3000)
-    }, 2000)
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "ca2d8245-58e5-4905-8347-6a7c8cf651e8", // Get free key from https://web3forms.com
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          subject: `Portfolio Contact from ${form.name}`,
+        }),
+      })
+
+      const result = await response.json()
+      
+      if (result.success) {
+        setStatus("success")
+        setForm({ name: "", email: "", message: "" })
+        setTimeout(() => setStatus("idle"), 5000)
+      } else {
+        setStatus("error")
+        setTimeout(() => setStatus("idle"), 5000)
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      setStatus("error")
+      setTimeout(() => setStatus("idle"), 5000)
+    }
   }
 
   return (
@@ -78,7 +104,7 @@ export function Contact() {
                 <h4 className="font-bold text-neutral-900 dark:text-white mb-4">Connect With Me</h4>
                 <div className="flex gap-4">
                   <a 
-                    href="https://linkedin.com/in/suman-kumar" 
+                    href="https://www.linkedin.com/in/suman-kumar-97310a25b/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="w-12 h-12 flex items-center justify-center rounded-full border border-neutral-200 dark:border-neutral-700 text-neutral-600 dark:text-neutral-400 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300"
@@ -173,6 +199,8 @@ export function Contact() {
                   </>
                 ) : status === "success" ? (
                   "Message Sent Successfully!"
+                ) : status === "error" ? (
+                  "Failed to Send. Try Again."
                 ) : (
                   <>
                     Send Message
