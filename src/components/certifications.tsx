@@ -79,12 +79,7 @@ const allCertifications: Certification[] = [
   }
 ]
 
-const achievements = [
-  "2nd Place – Bhopal Inter-College Ideathon",
-  "Coding progress tracked via Codolio",
-  "Solved 500+ DSA problems across various platforms",
-  "5 Star Badge in Problem Solving on HackerRank"
-]
+
 
 const categories = ["All", "Infosys", "Coursera", "IBM", "AWS", "Microsoft"]
 
@@ -143,7 +138,7 @@ export function Certifications() {
            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
         >
           <AnimatePresence mode="popLayout">
-            {filteredCerts.map((cert, index) => (
+            {filteredCerts.map((cert) => (
               <motion.div
                 layout
                 key={cert.title}
