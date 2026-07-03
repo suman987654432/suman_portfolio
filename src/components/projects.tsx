@@ -43,6 +43,19 @@ const projects = [
       "Built SEO-optimized landing pages, increasing search visibility and user engagement by ~25%.",
       "Optimized performance by reducing page load time by ~20% through asset and frontend optimization."
     ]
+  },
+  {
+    title: "Edu-Quiz",
+    description: "An interactive MERN-based quiz application designed to enhance competitive and engaging learning.Provide real time results.",
+    tech: ["React", "RESTful APIs", "Tailwind CSS", "TensorFlow.js"],
+    links: { demo: "https://quizmaster-flax.vercel.app/", code: "https://github.com/suman987654432/Quiz" },
+    image: "/quiz.png",
+    featured: true,
+    achievements: [
+      "Built a MERN quiz platform with real-time questions and scoring.",
+      "Added role-based authentication for admins and users.",
+      "Implemented leaderboards and performance tracking."
+    ]
   }
 ]
 
